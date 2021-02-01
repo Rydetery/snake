@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="/source/icon.png" type="image/png">
+    <link href="/styles.css" rel="stylesheet">
+    <title>Snake</title>
+</head>
+<body>
+    <div>
+    <button class="btnOptionsOnCanvas" onclick="showOptions(3)"></button>
+    <canvas id="snakeCanvas"></canvas>
+    </div>
+    <div class="conrols">
+        <img src="/source/Controls.png" alt="Controls WASD + arrows">
+    </div>
+    <div id="menu" class="popup Menu">
+        <div class="pupupBody">
+            <div class="popupContent">
+                <h2>MENU</h2>
+                <div class="buttons">
+                <button id="play" class="btn Play" onclick = "example(true)">Play</button>
+                <button class="btn optionsMenu" onclick="showOptions(0)">Options</button>
+                <button class="btn Speed" onclick="changeSpeed()">Speed: <span id = "speed">1</span>x</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="options" class="popup options">
+        <div class="pupupBody">
+            <div class="popupContent optionsContent">
+                <h2>OPTIONS</h2>
+                    <div class="selectColor">
+                        <div class="itemColor">
+                            <span class="item">Snake:</span> 
+                            <span>
+                            <button class="color s0" onclick="changeSnakeColor(0)"></button>
+                                <button class="color s1" onclick="changeSnakeColor(1)"></button>
+                                <button class="color s2" onclick="changeSnakeColor(2)"></button>
+                                <button class="color s3" onclick="changeSnakeColor(3)"></button>
+                                <button class="color s4" onclick="changeSnakeColor(4)"></button>
+                                </span>
+                        </div>
+                        <div class="itemColor">
+                            <span class="item">Food:</span>
+                            <span>
+                                <button class="color f0" onclick="changeFoodColor(0)"></button>
+                                <button class="color f1" onclick="changeFoodColor(1)"></button>
+                                <button class="color f2" onclick="changeFoodColor(2)"></button>
+                                <button class="color f3" onclick="changeFoodColor(3)"></button>
+                                <button class="color f4" onclick="changeFoodColor(4)"></button>
+                            </span>
+                            </div>
+                        <div class="itemColor">
+                             <span class="item">Background:</span>
+                             <span>
+                                 <button class="color b0" onclick="changeBackGround(0)"></button>
+                                 <button class="color b1" onclick="changeBackGround(1)" ></button>
+                                 <button class="color b2" onclick="changeBackGround(2)"></button>
+                                 <button class="color b3" onclick="changeBackGround(3)"></button>
+                                 <button class="color b4" onclick="changeBackGround(4)"></button> 
+                             </span>
+                        </div>     
+                    </div>
+                    <p class="origDemo"><span>Default</span><span>Demo</span></p>
+                    <div class="showSettings">
+                        <div id="field" class="field original">
+                            <div id="fieldHeader" class="fieldHeader"></div>
+                            <div id="fieldPlay" class="fieldPlay">
+                                <div id="fieldFood" class="fieldFood"></div>
+                                <div id="fieldSnakeHead" class="fieldSnakeHead"></div>
+                                <div id="fieldSnakeTail" class="fieldSnakeTail"></div>
+                            </div>
+                        </div>
+                        <div id="demoField" class="field demoField">
+                            <div id="demoHeader"class="fieldHeader demoHeader"></div>
+                            <div id="demoPlay" class="fieldPlay demoPlay">
+                                <div id="demoFood" class="fieldFood demoFood"></div>
+                                <div id="demoHead" class="fieldSnakeHead demoHead"></div>
+                                <div id="demoTail" class="fieldSnakeTail demoTail"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="buttonsOptions">
+                <button class="btnOpt play" onclick="applySetColors()">PLAY</button>
+                <button class="btnOpt cancel" onclick="showOptions(2)">CANCEL</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="pause" class="popup pause">
+        <div class="pupupBody">
+            <div id="pauseContent" class="popupContent pauseContent">
+            <h2 id="pauseText" class="pauseText">PAUSE</h2>
+            </div>
+        </div>
+    </div> 
+    <div id="gameOver" class="popup gameOver">
+        <div class="pupupBody">
+            <div class="popupContent">
+            <h2>GAME OVER</h2>
+            <h3>Score: <span id="gameScore" class="gameScore">0</span> </h3>
+               <div class="buttons gameOverbtn">
+                <button class="btn mainMenu" onclick="toMenu()">New Game</button>
+               </div>
+            </div>
+        </div>
+    </div>
+    <script id="gameScript" src="/game.js"></script>
+    <script src="/popups.js"></script>
+</body>
+</html>
