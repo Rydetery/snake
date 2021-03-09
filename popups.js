@@ -149,7 +149,7 @@ function changeSnakeColor (snakeColor) {
         case 4:
             document.getElementById("demoHead").style.backgroundColor = "#ae1212";  //#cc2323
             document.getElementById("demoTail").style.backgroundColor = "#ae1212";
-            sconfirmSnakeColor = 4;
+            confirmSnakeColor = 4;
             break;       
         default:
             break;
